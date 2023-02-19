@@ -1,5 +1,5 @@
 from datetime import date, datetime
-from typing import Optional
+from typing import Optional, List
 import uuid
 from pydantic import validator
 
@@ -9,6 +9,7 @@ from budgetManagement import utils
 class Rqm(utils.sql):
     rqmId: Optional[str]
     rqmDate: Optional[datetime]
+    forRqer: str
     forMonth: date
     acc: str
     payDate: date
@@ -26,8 +27,10 @@ class Rqm(utils.sql):
     def create_rqmDate(cls, v):
         return datetime.strptime(datetime.now().strftime(format='%Y-%m-%d-%H-%M-%S'), '%Y-%m-%d-%H-%M-%S')
 
+
 class Budget(utils.sql):
     bgId: Optional[str]
+    dpser: str
     dpsDate: date
     forMonth: date
     acc: str

@@ -1,0 +1,612 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', 'Poppins', sans-serif;
+}
+html{
+    width: 100%;
+    height: 100%;
+    body{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        #root{
+            width: 100%;
+            height: 100%;
+            .App{
+                width: 100%;
+                height: 100%;
+                background-image: linear-gradient(120deg, #eeaeca, #94bbe9);
+                
+                .container{
+                    display: flex;
+                    width: 100%;
+                    height: 100%;
+                    .home{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        .home-title{
+                            font-size: 70px;
+                            font-weight: 700;
+                            transform: translateY(-70px);
+                            color: #231792;
+                        }
+                        .home-subTitle{
+                            font-size: 50px;
+                            font-weight: 700;
+                            color: #231792;
+                        }
+                    }
+                    .navbar{
+                        min-width: 350px;
+                        background-color: #fff4;
+                        .logo-title{
+                            height: 100px;
+                            margin-bottom: 10px;
+                            display: flex;
+                            .logo-img{
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                padding: 10px;
+                                img {
+                                    width: 70px;
+                                    height: 70px;
+                                }
+                            }
+                            .title-text{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                .big-title{
+                                    color: #231792;
+                                    font-size: 25px;
+                                    font-weight: 700;
+                                }
+                                .small-title{
+                                    color: #231792;
+                                    font-size: 20px;
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+                        .menu-list{
+                            .menu-item {
+                                display: flex;
+                                flex-direction: column;
+                                text-decoration: none;
+                            }
+                            a{
+                                height: 50px;
+                                font-weight: 600;
+                                font-size: 17px;
+                                color: #0d0f31;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                background-color: #fff4;
+                                margin-bottom: 5px;
+                            }
+                            a:link, a:visited, a:active{
+                                text-decoration: none;
+                                color: #0d0f31;
+                            }
+                            a:hover{
+                                background-color: #3e32a8;
+                                color: #ddd;
+                            }
+                        }
+                    }
+                    .rqm{
+                        display: flex;
+                        flex-direction: column;
+                        padding : 20px;
+                        width: 100%;
+                        height: 100%;
+                        // background-image: linear-gradient(120deg, #3e32a8, #e310c7);
+
+                        // button{
+                            // width: 50px;
+                            // background-color: #ffbaba;
+                            // border: none;
+                            // color: black;
+                            // padding: 2px;
+                            // font-weight: 700;
+                            // cursor: pointer;
+                        // }
+                        button:hover{
+                            background-color: #ff1313;
+                            color: #ddd;
+                        }
+
+                        .table{
+                            background-color: #fff5;
+                            backdrop-filter: blur(7px);
+                            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+                            border-radius: 15px;
+                            height: 600px;
+                            margin-bottom: 50px;
+
+                            .table--header{
+                                width: 100%;
+                                background-color: #fff4;
+                                border-bottom: 1px solid #ddd;
+                                padding: 10px;
+                                padding-left: 30px;
+
+                                .rqmTitle{
+                                    width: 100%;
+                                    font-weight: 700;
+                                    font-size: 20px;
+                                }
+                            }
+                            .table--body{
+                                width: 95%;
+                                height: calc(100% - 80px);
+                                background-color: #fff4;
+                                margin: 10px auto;
+                                border-radius: 15px;
+                                overflow: auto;
+
+                                .rqmTableForm{
+                                    height: 100%;
+                                }
+
+                                table{
+                                    width: 100%;
+                                    border-collapse: collapse;
+                                }
+                                th{
+                                    position: sticky;
+                                    top: 0;
+                                    padding: 5px;
+                                    border-bottom: .5px solid #ddd;
+                                    background-color: #d6dcea;
+                                    color: #0d0f31;
+                                    text-align: center;
+                                }
+                                tr{
+                                    padding: 0px;
+                                    margin: 0px ;
+                                }
+                                tr.read-only-row:hover{
+                                    background-color: #b2ccd4;
+                                    color: #0d0f31;
+                                }
+                                td{
+                                    padding: 5px 2px;
+                                    margin: 0px;
+                                    font-size: 15px;
+                                    text-align: center;
+                                }
+                                .rqmId{
+                                    min-width: 190px;
+                                }
+                                .rqmDate{
+                                    min-width: 150px;
+                                }
+                                .forRqer{
+                                    min-width: 90px;
+                                }
+                                .forMonth{
+                                    min-width: 130px;
+                                }
+                                .acc{
+                                    min-width: 90px;
+                                }
+                                .payDate{
+                                    min-width: 130px;
+                                }
+
+                                .dsc{
+                                    min-width: 200px;
+                                }
+                                .amt{
+                                    min-width: 100px;
+                                }
+                                .pybDate{
+                                    min-width: 130px;
+                                }
+                                .action{
+                                    min-width: 50px;
+                                }
+                                tr.editable-row {
+                                    background-color: #b2ccd4;
+                                }
+                                input[type="date"]::-webkit-inner-spin-button,
+                                input[type="date"]::-webkit-calendar-picker-indicator {
+                                    display: none;
+                                    -webkit-appearance: none;
+                                }
+                                .editable-row input{
+                                    width: 80%;
+                                    height: 100%;
+                                    border: none;
+                                    background-color: #6f8b94;
+                                    color: white ;
+                                    font-size: 15px;
+                                    text-align: center;
+                                    padding: 0px;
+                                    margin: 0px;
+                                }
+                                .editable-row input:focus{
+                                    outline: none;
+                                }
+                                td.amt {
+                                    text-align: right;
+                                }
+
+                            }
+                        }
+
+                        .rqmAdd{
+                            background-color: #fff5;
+                            backdrop-filter: blur(7px);
+                            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+                            border-radius: 15px;
+
+                            margin-bottom: 50px;
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            height: 200px;
+                            background-color: #fff5;
+
+                            .rqmTitle{
+                                background-color: #fff4;
+                                height: 50px;
+                                border-bottom: 1px solid #ddd;
+                                width: 100%;
+                                font-weight: 700;
+                                font-size: 20px;
+                                padding: 10px;
+                                padding-left: 30px;
+                            }
+
+                            .rqmAdd--body{
+                                width: 100%;
+                                padding: 10px;
+
+                                .rqmAdd-table{
+                                    width: 100%;
+                                    background-color: #fff5;
+                                    border-radius: 10px;
+                                }
+
+                                .rqmAddForm{
+                                    padding: 10px;
+                                }
+
+                                td{
+                                    margin: 0;
+                                    padding: 7px 15px;
+                                    text-align: center;
+                                }
+                                input{
+                                    border: none;
+                                    text-align: center;
+                                    font-size: 15px;
+                                    background-color: #fff5;
+                                    color: #3e32a8;
+                                    height: 100%;
+                                }
+                                input:focus{
+                                    outline: none;
+                                }
+                                .add-forRqer{
+                                    min-width: 100px;
+                                }
+                                .add-forMonth{
+                                    min-width: 150px;
+                                }
+                                .add-acc{
+                                    min-width: 100px;
+                                }
+                                .add-payDate{
+                                    min-width: 150px;
+                                }
+                                .add-dsc{
+                                    min-width: 200px;
+                                }
+                                .add-amt{
+                                    min-width: 100px;
+                                }
+                                .rqmAdd > .action{
+                                    min-width: 200px;
+                                }
+                            }
+                        }
+                    }
+                    .bgd{
+                        display: flex;
+                        flex-direction: column;
+                        padding : 20px;
+                        width: 100%;
+                        height: 100%;
+                        // background-image: linear-gradient(120deg, #3e32a8, #e310c7);
+
+                        button{
+                            width: 50px;
+                            background-color: #ffbaba;
+                            border: none;
+                            color: black;
+                            padding: 2px;
+                            font-weight: 700;
+                            cursor: pointer;
+                        }
+                        button:hover{
+                            background-color: #ff1313;
+                            color: #ddd;
+                        }
+
+                        .table{
+                            background-color: #fff5;
+                            backdrop-filter: blur(7px);
+                            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+                            border-radius: 15px;
+                            height: 600px;
+                            margin-bottom: 50px;
+
+                            .table--header{
+                                width: 100%;
+                                background-color: #fff4;
+                                border-bottom: 1px solid #ddd;
+                                padding: 10px;
+                                padding-left: 30px;
+
+                                .rqmTitle{
+                                    width: 100%;
+                                    font-weight: 700;
+                                    font-size: 20px;
+                                }
+                            }
+                            .table--body{
+                                width: 90%;
+                                height: calc(100% - 80px);
+                                background-color: #fff4;
+                                margin: 10px auto;
+                                border-radius: 15px;
+                                overflow: auto;
+
+                                .bgdTableForm{
+                                    height: 100%;
+                                }
+
+                                table{
+                                    width: 100%;
+                                    border-collapse: collapse;
+                                }
+                                th{
+                                    position: sticky;
+                                    top: 0;
+                                    padding: 5px;
+                                    border-bottom: .5px solid #ddd;
+                                    background-color: #d6dcea;
+                                    color: #0d0f31;
+                                    text-align: center;
+                                }
+                                tr{
+                                    padding: 0px;
+                                    margin: 0px ;
+                                }
+                                tr.read-only-row:hover{
+                                    background-color: #b2ccd4;
+                                    color: #0d0f31;
+                                }
+                                td{
+                                    padding: 5px 2px;
+                                    margin: 0px;
+                                    font-size: 15px;
+                                    text-align: center;
+                                }
+                                .bgId{
+                                    min-width: 190px;
+                                }
+                                .dpser{
+                                    min-width: 90px;
+                                }
+                                .dpsDate{
+                                    min-width: 150px;
+                                }
+                                .forMonth{
+                                    min-width: 130px;
+                                }
+                                .acc{
+                                    min-width: 90px;
+                                }
+                                .amt{
+                                    min-width: 100px;
+                                }
+                                .action{
+                                    min-width: 50px;
+                                }
+                                tr.editable-row {
+                                    background-color: #b2ccd4;
+                                }
+                                input[type="date"]::-webkit-inner-spin-button,
+                                input[type="date"]::-webkit-calendar-picker-indicator {
+                                    display: none;
+                                    -webkit-appearance: none;
+                                }
+                                .editable-row input{
+                                    width: 80%;
+                                    height: 100%;
+                                    border: none;
+                                    background-color: #6f8b94;
+                                    color: white ;
+                                    font-size: 15px;
+                                    text-align: center;
+                                    padding: 0px;
+                                    margin: 0px;
+                                }
+                                .editable-row input:focus{
+                                    outline: none;
+                                }
+                                td.amt {
+                                    text-align: right;
+                                }
+
+                            }
+                        }
+
+                        .bgdAdd{
+                            background-color: #fff5;
+                            backdrop-filter: blur(7px);
+                            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+                            border-radius: 15px;
+
+                            margin-bottom: 50px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            width: 100%;
+                            height: 200px;
+                            background-color: #fff5;
+
+                            .bgdTitle{
+                                background-color: #fff4;
+                                height: 50px;
+                                border-bottom: 1px solid #ddd;
+                                width: 100%;
+                                font-weight: 700;
+                                font-size: 20px;
+                                padding: 10px;
+                                padding-left: 30px;
+                            }
+
+                            .bgdAdd--body{
+                                display: flex;
+                                width: 100%;
+                                align-items: center;
+                                width: 90%;
+                                padding: 10px;
+                               
+                                .bgdAddForm{
+                                    padding: 10px;
+                                    width: 100%;
+
+                                    .bgdAdd-table{
+                                        width: 100%;
+                                        background-color: #fff5;
+                                        border-radius: 10px;
+                                    }
+                                }
+
+                                td{
+                                    margin: 0;
+                                    padding: 7px 15px;
+                                    text-align: center;
+                                }
+                                input{
+                                    border: none;
+                                    text-align: center;
+                                    font-size: 15px;
+                                    background-color: #fff5;
+                                    color: #3e32a8;
+                                    height: 100%;
+                                }
+                                input:focus{
+                                    outline: none;
+                                }
+                                .add-forDpser{
+                                    min-width: 100px;
+                                }
+                                .add-dpsDate{
+                                    min-width: 150px;
+                                }
+                                .add-forMonth{
+                                    min-width: 150px;
+                                }
+                                .add-acc{
+                                    min-width: 100px;
+                                }
+                                .add-amt{
+                                    min-width: 100px;
+                                }
+                                .bgdAdd > .action{
+                                    min-width: 200px;
+                                }
+                            }
+                        }
+                    }
+                    .bgs{
+                            display: flex;
+                            flex-direction: column;
+                            padding : 20px;
+                            width: 100%;
+                            height: 100%;
+                            // background-image: linear-gradient(120deg, #3e32a8, #e310c7);
+
+                            .table{
+                                height: 100%;
+                                background-color: #fff5;
+                                backdrop-filter: blur(7px);
+                                box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+                                border-radius: 15px;
+                                margin-bottom: 50px;
+
+                                .table--header{
+                                    width: 100%;
+                                    background-color: #fff4;
+                                    border-bottom: 1px solid #ddd;
+                                    padding: 10px;
+                                    padding-left: 30px;
+
+                                    .bgsTitle{
+                                        width: 100%;
+                                        font-weight: 700;
+                                        font-size: 20px;
+                                    }
+                                }
+                                .table--body{
+                                    width: 95%;
+                                    background-color: #fff4;
+                                    margin: 10px auto;
+                                    border-radius: 15px;
+                                    overflow: auto;
+
+                                    .bgsTableForm{
+                                        height: 100%;
+                                    }
+
+                                    table{
+                                        width: 100%;
+                                        border-collapse: collapse;
+                                    }
+                                    th{
+                                        position: sticky;
+                                        top: 0;
+                                        padding: 5px;
+                                        border-bottom: .5px solid #ddd;
+                                        background-color: #d6dcea;
+                                        color: #0d0f31;
+                                        text-align: center;
+                                    }
+                                    tr{
+                                        padding: 0px;
+                                        margin: 0px ;
+                                    }
+                                    tr.read-only-row:hover{
+                                        background-color: #b2ccd4;
+                                        color: #0d0f31;
+                                    }
+                                    td{
+                                        padding: 5px 2px;
+                                        margin: 0px;
+                                        font-size: 15px;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
