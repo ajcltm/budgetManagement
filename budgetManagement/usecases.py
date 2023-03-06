@@ -43,8 +43,8 @@ def query_budget(**condition):
 # ======== report ==========
 
 def query_monthly_account_budget():
-    grouped_rqm = db.query('Rqm').select('forMonth', 'acc', 'amt').group_by('forMonth', 'acc')
-    grouped_bgd = db.query('Budget').select('forMonth', 'acc', 'amt').group_by('forMonth', 'acc')
+    grouped_rqm = db.query('Rqm').select('forMonth', 'acc').group_by('forMonth', 'acc').sum('amt', 'amt')
+    grouped_bgd = db.query('Budget').select('forMonth', 'acc').group_by('forMonth', 'acc').sum('amt', 'amt')
     joined = db.query('Rqm').set_table('gr', subQuery=grouped_rqm).set_table('gb', subQuery=grouped_bgd).select('gr.forMonth', 'gr.acc', 'gb.amt as bgd_amt', 'gr.amt as rqm_amt').from_('gr').join(tableName='gb', how='left outer', gr_forMonth='=gb.forMonth' , gr_acc='=gb.acc').export_data(format='dict')
     return joined
     

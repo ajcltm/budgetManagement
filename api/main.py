@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, validator
 from budgetManagement import usecases
 from fastapi.encoders import jsonable_encoder
 from datetime import date
@@ -38,6 +38,7 @@ class AddRqm(BaseModel):
 
 class UpdateRqm(BaseModel):
     rqmId:str
+    rqmDate:str
     forRqer:str
     forMonth:date
     acc:str
@@ -45,6 +46,13 @@ class UpdateRqm(BaseModel):
     dsc:str
     amt:int
     pybDate:Optional[date]
+
+    @validator('amt', pre=True, always=True)
+    def to_number(cls, v):
+        if type(v) == str:
+            return int(v.replace(',','')) 
+        return v
+    
     
 class DeleteRqm(BaseModel):
     rqmId: str
@@ -87,7 +95,7 @@ async def rqmAdd(data:AddRqm):
 
 @app.post("/rqmUpdate")
 async def rqmUpdate(data:UpdateRqm):
-    usecases.change_requirement(id=data.rqmId, **data.dict(exclude={'rqmId'}))
+    usecases.change_requirement(id=data.rqmId, **data.dict(exclude={'rqmId', 'rqmDate'}))
     print("수정 완료")
     print(data)
     return {"message": "청구내역이 수정되었습니다."}
